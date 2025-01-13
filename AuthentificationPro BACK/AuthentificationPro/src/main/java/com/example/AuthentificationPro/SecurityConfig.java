@@ -17,7 +17,7 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable())  // Disable CSRF protection
                 .authorizeHttpRequests(authz -> authz
-                        .requestMatchers("/auth/login", "/auth/register").permitAll()  // Allow access to login and register
+                        .requestMatchers("/auth/login", "/auth/register","/auth/refresh").permitAll()  // Allow access to login and register
                         .anyRequest().authenticated()  // Protect all other requests
                 );
         return http.build();
